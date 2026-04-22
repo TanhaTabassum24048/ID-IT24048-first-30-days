@@ -1,0 +1,109 @@
+Date-21 April 2026 
+Day-02 
+Topic-Encapsulation 
+Video num-04
+Video link- https://youtu.be/lWFzm8qIR1c?si=O1mSzbbyW3buRrSQ
+
+Example1 -
+  public class Student {
+    private String name;
+    int age;
+    protected String dept;
+    public String uni;
+
+    //constructor
+    public Student(){
+
+    }
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void show(){
+        System.out.println("Name:" + name);
+        System.out.println("Age:" + age);
+        System.out.println("Department:" + dept);
+        System.out.println("University:" + uni);
+
+    }
+}
+//child class to access protected 
+class Info extends Student{
+    public void showDept(){
+        System.out.println("Protected data of department:" + dept);
+    }
+}
+
+
+import java.util.Scanner;
+
+public class MainStu{
+    public static void main(String[] args){
+          Scanner sc = new Scanner(System.in) ;    
+          Student s1 = new Student();
+
+          System.out.print("Name:");
+          String n = sc.nextLine();
+          s1.setName(n);
+
+          System.out.print("Age:");
+          s1.age = sc.nextInt();
+          sc.nextLine();
+
+          System.out.print("Department:");
+          s1.dept = sc.nextLine();
+
+          System.out.print("University:");
+          s1.uni = sc.nextLine() ;
+
+          s1.show();
+
+          System.out.println("\nGetter Name: " + s1.getName());
+
+          Info i1 = new Info();
+          i1.dept = s1.dept;
+          i1.showDept();
+
+          sc.close();
+
+    }
+      
+}
+
+
+Example2 -
+  public class Person{
+    private int age;
+    String name ;
+    public int getAge(){
+        return age;
+    }
+
+    public void setAge(int age){
+        if(age > 0){
+            this.age = age ;
+        }
+    }
+
+    public void info(){
+        System.out.println("Name of person:" + name);
+        System.out.println("Age of person:" + age);
+
+    }
+}
+
+
+  public class MainPerson{
+    public static void main(String[] args){
+        Person p1 = new Person();
+
+        System.out.println("Age:" + p1.getAge());
+        p1.setAge(20);
+
+        System.out.println("Updated age:" + p1.getAge());
+    }
+}
+
