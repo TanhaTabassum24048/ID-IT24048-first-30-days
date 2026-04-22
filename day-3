@@ -1,0 +1,58 @@
+Date-21 April 2026 
+Day-03
+Topic-Constructor 
+Video num-05
+Video link- https://youtu.be/lWFzm8qIR1c?si=O1mSzbbyW3buRrSQ
+
+Example1 -
+  public class Car{
+    private String color;
+    private int speed;
+
+    //constructor
+    public Car(String c , int s){
+        this.color = c ;
+        this.speed = s ;
+    }
+
+    //method for info
+    public void info(){
+        System.out.println("Color of Car:" + color);
+        System.out.println("Speed of Car:" + speed);
+    }
+
+
+    public static void main(String[] args){
+        Car c1 = new Car("Red", 120);
+        c1.info();
+    }
+}
+
+    
+
+Example2 -
+
+  public class Student{
+    private String dept;
+    private int ID;
+
+    //constructor
+    public Student(String dept , int id){
+        this.dept = dept ;
+        this.ID = id ;
+    }
+
+    //method for info
+    public void info(){
+        System.out.println("Department of Student:" + dept);
+        System.out.println("ID of student:" + ID);
+    }
+
+
+    public static void main(String[] args){
+        Student s1 = new Student("ICT", 24002);
+        s1.info();
+    }
+}
+
+    
