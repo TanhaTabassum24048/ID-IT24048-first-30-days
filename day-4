@@ -1,0 +1,107 @@
+Date-24 April 2026 
+Day-04
+Topic-Inheritance and Polymorphism
+Video num-04
+Video link- https://youtu.be/j_VA2Rp6jM0?si=WF-_CRjXV4g8UKR7
+
+example1 -
+class Animal{    //parent classs
+    String name;
+    int age;
+     
+    //parent class method
+     void eat(){
+        System.out.println(name + "is eating.");
+    }
+     void bark(){
+        System.out.println(name + "is barking.");
+    }
+}
+
+class Dog extends Animal{
+    String breed ;
+     void play(){
+        System.out.println(name + "is playing.");
+    }
+
+     void Display(){
+        System.out.println("Name :" + name);
+        System.out.println("Age :" + age);
+        System.out.println("Breed :" + breed);
+
+    }
+}
+
+class Cat extends Animal{
+    String color ;
+     void play(){
+        System.out.println(name + "is playing.");
+    }
+
+     void Show(){
+        System.out.println("Name :" + name);
+        System.out.println("Age :" + age);
+        System.out.println("Color :" + color);
+
+    }
+}
+
+
+public class MainAnimal{
+    public static void main(String[] args){
+        //object
+        Dog d1 = new Dog();
+        d1.name = "Bob";
+        d1.age = 3;
+        d1.breed = "Shi-poo" ;
+        d1.bark();
+        d1.play();
+        d1.Display();
+        
+        Cat c1 = new Cat();
+
+        c1.name = "Plum";
+        c1.age = 2;
+        c1.color = "Beige";
+        c1.eat();
+        c1.play();
+        c1.Show();
+    }
+}
+
+
+example2 -
+class Car{
+    String col ;
+
+void color(){
+    System.out.println("Each car has a color.");
+
+}
+}
+class Lamborghini extends Car{
+    @Override
+    void color(){
+        col = "Black" ;
+        System.out.println("the color of Lamborghini is " + col) ;
+    }
+}
+
+class RangeRover extends Car{
+    @Override
+    void color(){
+        col = "red" ;
+        System.out.println("the color of RangeRover is " + col) ;
+    }
+}
+
+public class MainCar{
+    public static void main(String[] args){
+        Car c1 = new Lamborghini();
+        Car c2 = new RangeRover();
+
+        c1.color();
+        c2.color();
+    }
+}
+
