@@ -1,0 +1,145 @@
+Date-25 April 2026 
+Day-05 
+Topic-Abstraction and Interface 
+Video num-04
+Video link- https://youtu.be/1SXyi3DK-88?si=UO9G-MYaXkqC0p9-
+https://youtu.be/lsJ9QjJPbx8?si=vxOptFWqVEe6zHCG
+
+example1 -
+  abstract class TV{
+    abstract void turnOn();
+    abstract void turnOff();;
+
+} 
+    
+class TVRemote extends TV{
+    @Override
+    void turnOn(){
+        System.out.println("TV is turned on");
+    } 
+
+    @Override
+    void turnOff(){
+        System.out.println("TV is turned off");
+    } 
+
+}
+
+public class MainTV{
+    public static void main(String[] abc){
+        TV remote = new TVRemote() ;
+    
+        remote.turnOn();
+        remote.turnOff();
+    }
+}
+
+
+  example2 -(interface)
+  interface Shape{
+    double calcArea();
+}
+
+class Circle implements Shape{
+    private double r ;
+    public Circle(double r){  //constructor
+        this.r = r ;
+    }
+
+    public double calcArea(){
+        return Math.PI * r *r ;
+    }
+}
+
+class Rect implements Shape{
+    private double length;
+    private double width;
+
+    public Rect(double length , double width){
+        this.length = length ;
+        this.width = width ;
+    }
+    
+    public double calcArea(){
+        return (length * width) ;
+    }
+
+}
+
+public class MainShape {
+    public static void main(String[] abs){
+        Shape Cir = new Circle(5.0);
+        Shape rect = new Rect(4.0 , 5.0);
+
+        System.out.println("Area of circle:" + Cir.calcArea());
+        System.out.println("Area of Rect:" + rect.calcArea());
+    }
+    
+}
+
+example3 -(inner)
+  class Animal{  //outer 
+    private int legs = 4 ;
+
+    class Dog{  //inner
+            void display(){
+                System.out.println("Dog has "+legs+" legs");
+        }
+    }
+}
+
+class MainAni{
+    public static void main(String[] args){
+        Animal.Dog dog= new Animal().new Dog() ;
+        dog.display();
+    }
+}
+
+example4 -(static nested)
+  class Outer {
+    static int outer_x = 10;
+    int outer_y = 20;
+
+    private static int outer_private = 30;
+
+    static class StaticNestedClass {
+        void display()
+        {
+            System.out.println("outer_x = " + outer_x);
+
+            System.out.println("outer_private = "
+                               + outer_private);
+
+              Outer out = new Outer();
+              System.out.println("outer_y = " + out.outer_y);
+          
+          
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args)
+    {
+        Outer.StaticNestedClass nestedObject = new Outer.StaticNestedClass();
+
+        nestedObject.display();
+    }
+}
+
+example5 -(annonymous)
+  interface Age {
+    int x = 21;
+    void getAge();
+}
+  class MyClass implements Age {
+    public void getAge() {
+        System.out.print("Age is " + x);
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.getAge();
+    }
+}
