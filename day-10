@@ -1,0 +1,62 @@
+Date-1 May 2026 
+Day-10 
+Topic-Queue 
+Video num-13
+Video link- https://youtu.be/PccU1wAdnlM?si=OOjsNITs4w83LJBp
+
+example-1
+import java.util.*;
+
+public class MainQueue {
+    public static void main(String[] args) {
+
+        Queue<String> queue = new LinkedList<>();
+
+        queue.add("Ali");
+        queue.add("Rahim");
+        queue.add("Karim");
+        queue.add("Sakib");
+        queue.add("Nadia");
+
+        System.out.println("Initial Queue: " + queue);
+
+        queue.poll();
+        queue.poll();
+
+        System.out.println("After removing 2 students: " + queue);
+        System.out.println("Front student: " + queue.peek());
+        System.out.println("Final Queue: " + queue);
+    }
+}
+
+
+example-2
+
+
+import java.util.*;
+
+public class Customer {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        Queue<String> queue = new LinkedList<>();
+
+        System.out.print("Enter number of customers: ");
+        int n = sc.nextInt();
+        sc.nextLine(); 
+
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter customer name: ");
+            String name = sc.nextLine();
+            queue.add(name);
+        }
+
+        System.out.println("\nCustomer Queue: " + queue);
+
+        String served = queue.poll();
+        System.out.println("Served customer: " + served);
+
+        System.out.println("Next customer: " + queue.peek());
+        System.out.println("Remaining Queue: " + queue);
+    }
+}
