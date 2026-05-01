@@ -1,0 +1,86 @@
+Date-1 May 2026 
+Day-08
+Topic-HasH set
+Video num-12
+Video link- https://youtu.be/XDw-BkAZYmY?si=I6by75mcOieqK9D6
+
+example-1
+
+import java.util.HashSet ;
+
+public class HashCar {
+    public static void main(String[] ads){
+    HashSet<String> car = new HashSet<>();   
+    car.add("Lamborghini");
+    car.add("BMW");
+    car.add("Rolce Royce");
+    car.add("Range Rover");
+    car.add("Lamborghini");
+    car.add("Pagani");
+
+    System.out.println("Car list:" + car);
+    
+    //check if an item exists
+    if (car.contains("Marcedes")) {
+         System.out.println("Marcedes is in the set!");
+        }
+    else
+    System.out.println("Not in list");
+
+    car.remove("Pagani");
+    System.out.println("Car list:" + car);
+
+    System.out.println("Car list size:" + car.size());
+
+    for (String Car : car) {
+            System.out.println(car);
+
+           
+        }
+    
+
+    }
+    
+}
+
+
+exam=mple-2
+
+import java.util.HashSet;
+
+public class Hash {
+    public static void main(String[] args) {
+        //create a hashSet
+        HashSet<String> fruits = new HashSet<>();
+
+        //add elements
+        fruits.add("Apple");
+        fruits.add("Banana");
+        fruits.add("Grapes");
+        fruits.add("Orange");
+        fruits.add("Apple");// This duplicate will be ignored
+        fruits.add("Strawberry");
+
+        //show the list
+        System.out.println("Fruits are :" + fruits) ;
+
+        //check if an item exists
+        if (fruits.contains("Apple")) {
+            System.out.println("Apple is in the set!");
+        }
+
+        //remove an item
+        fruits.remove("Banana");
+        System.out.println("Fruits are :" + fruits) ;
+
+        //size
+        System.out.println("Size of set: " + fruits.size());
+
+        //iterate through elements
+        for (String fruit : fruits) {
+            System.out.println(fruit);
+
+           
+        }
+    }
+}
