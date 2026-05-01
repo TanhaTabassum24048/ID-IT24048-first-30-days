@@ -1,0 +1,98 @@
+Date-1 May 2026 
+Day-9 
+Topic-Tree Set 
+Video num-12
+Video link- https://youtu.be/XDw-BkAZYmY?si=W_kco6u8pzW7iLds
+
+example1-
+
+  import java.util.*;
+
+public class ManageTree {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt(); // number of elements
+        TreeSet<Integer> set = new TreeSet<>();
+
+        // Input elements
+        for (int i = 0; i < n; i++) {
+            int x = sc.nextInt();
+            set.add(x); // duplicates automatically ignored
+        }
+
+        set.add(100);
+        set.add(200);
+
+        // Print sorted elements
+        System.out.println("Sorted elements: " + set);
+
+        // Smallest element
+        System.out.println("Minimum: " + set.first());
+
+        // Largest element
+        System.out.println("Maximum: " + set.last());
+
+        set.remove(200);
+        System.out.println("Set:" + set);
+    }
+}
+
+example2-
+
+  import java.util.Comparator;
+
+class Student {
+    String name;
+    int marks;
+
+    Student(String name, int marks) {
+        this.name = name;
+        this.marks = marks;
+    }
+}
+
+class StudentComparator implements Comparator<Student> {
+    public int compare(Student s1, Student s2) {
+        
+        if (s1.marks != s2.marks) {
+            return s2.marks - s1.marks;
+        }
+
+        return s1.name.compareTo(s2.name);
+    }
+}
+
+
+import java.util.Scanner;
+import java.util.TreeSet;
+
+public class MainStu {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        sc.nextLine(); // consume newline
+
+        TreeSet<Student> students = new TreeSet<>(new StudentComparator());
+
+        // Input students
+        for (int i = 0; i < n; i++) {
+            String name = sc.nextLine();
+            int marks = sc.nextInt();
+            sc.nextLine(); // consume newline
+
+            students.add(new Student(name, marks));
+        }
+
+        // Print sorted students
+        System.out.println("Sorted Students:");
+        for (Student s : students) {
+            System.out.println(s.name + " - " + s.marks);
+        }
+
+        // Top scorer (first element because descending order)
+        Student top = students.first();
+        System.out.println("Topper: " + top.name + " - " + top.marks);
+    }
+}
