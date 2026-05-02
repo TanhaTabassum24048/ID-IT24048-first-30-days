@@ -1,0 +1,142 @@
+Date-2 May 2026 
+Day-11
+Topic-File handling 
+Video num-16
+Video link- https://youtu.be/63c8XmiOrzo?si=TqBfq4vHazbL_VJV
+
+example1-
+import java.io.* ;
+import java.util.*;
+
+public class Employee {
+    public static void main(String[] ads){
+        Scanner sc = new Scanner(System.in);
+
+        File file = new File("Employee.txt") ;
+
+
+        //create file
+        try {
+            
+            if(file.createNewFile()){
+                System.out.println("File is created successfully!");
+            }
+            else{
+                System.out.println("File already exists!");
+            }
+        
+
+        //write
+
+        FileWriter fw = new FileWriter(file);
+        fw.write("01. Rahim --Manager --300000\n");
+        fw.write("02. Karim--Developer--400000\n");
+        fw.write("03. Abdul--Designer--350000\n");
+        fw.close();
+        System.out.println("Employee record saved!");
+
+        //append
+        FileWriter append = new FileWriter(file, true);
+        append.write("101 Tanha Intern 50000\n");
+        append.close();
+        System.out.println("New employee added.");
+
+        //read
+        System.out.println("Employee records:\n");
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String line;
+
+        while((line = br.readLine()) != null){
+            System.out.println(line);
+        }
+        br.close();
+
+         //search employee by ID
+            System.out.print("\nEnter employee ID to search: ");
+            String searchId = sc.next();
+
+            br = new BufferedReader(new FileReader(file));
+            boolean found = false;
+
+            while ((line = br.readLine()) != null) {
+                if (line.startsWith(searchId)) {
+                    System.out.println("Employee Found: " + line);
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                System.out.println("Employee not found.");
+            }
+
+            br.close();
+
+            }
+
+            catch (IOException e) {
+            System.out.println("Error: " + e);
+        }
+
+        sc.close();
+    }
+    
+}
+
+
+
+example-2
+import java.io.*;
+
+public class Student {
+    public static void main(String[] args) {
+        
+        try {
+            //file create
+            File file = new File("student.txt");
+
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+
+            // write
+            FileWriter writer = new FileWriter(file);
+            writer.write("Name: Tanha\n");
+            writer.write("Department: ICT\n");
+            writer.write("Semester: 4th\n");
+            writer.close();
+            System.out.println("Data written successfully.");
+
+            // append
+            FileWriter appendWriter = new FileWriter(file, true);
+            appendWriter.write("University: MBSTU\n");
+            appendWriter.close();
+            System.out.println("Data appended successfully.");
+
+            //read
+            System.out.println("\nReading file content:");
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+            br.close();
+
+            // rename
+            File renamedFile = new File("student_info.txt");
+
+            if (file.renameTo(renamedFile)) {
+                System.out.println("File renamed successfully.");
+            } else {
+                System.out.println("Rename failed.");
+            }
+
+
+        } catch (IOException e) {
+            System.out.println("Error: " + e);
+        }
+    }
+}
