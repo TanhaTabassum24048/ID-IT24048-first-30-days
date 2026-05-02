@@ -1,0 +1,77 @@
+Date-02 May 2026 
+Day-12
+Topic-Collection Framework(Real world scenario) 
+Video num-15
+Video link- https://youtu.be/gtmBSl10DvY?si=yNZcXcukcWGQ9blv
+
+example-1
+//java collection framework real world scenario(array list-- student attendence)
+import java.util.*;
+public class Attendence {
+    public static void main(String[] ads){
+        ArrayList<String> student = new ArrayList<>();
+        student.add("Alex");
+        student.add("Tyson");
+        student.add("Max");
+
+        System.out.println(student);
+    }
+    
+}
+
+
+example-2
+//java collection framework real world scenario(queue- ticket counterline)
+import java.util.*;
+
+public class Ticket {
+    public static void main(String[] args) {
+        Queue<String> q = new LinkedList<>();
+
+        q.add("Customer 1");
+        q.add("Customer 2");
+        q.add("Customer 3");
+
+        System.out.println("Serving: " + q.poll());
+        System.out.println(q);
+    }
+} 
+    
+
+
+
+example-3
+example-3
+//java collection framework real world scenario(stack-- browser history)
+
+import java.util.*;
+
+public class Browse {
+    public static void main(String[] args) {
+        Stack<String> history = new Stack<>();
+
+        history.push("Google");
+        history.push("YouTube");
+        history.push("Facebook");
+
+        System.out.println("Current History: " + history);
+
+        history.pop();
+        System.out.println("After pop: " + history);
+    }
+}
+example-4
+//java collection framework real world scenario(Hash set-- user name )
+import java.util.*;
+
+public class UserName {
+    public static void main(String[] args) {
+        HashSet<String> users = new HashSet<>();
+
+        users.add("Tanha123");
+        users.add("Alex123");
+        users.add("Tanha123");
+
+        System.out.println(users);
+    }
+}
