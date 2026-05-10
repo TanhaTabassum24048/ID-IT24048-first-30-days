@@ -1,0 +1,45 @@
+Date-10 May 2026 
+Day- 17
+Topic-Time zone 
+Video num-23
+Video link- https://youtu.be/wNNcI8ktP34?si=YV8mXovV5vWmJjez
+
+example 1-
+
+  import java.time.ZonedDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+
+public class TMZone {
+    public static void main(String[] args) {
+        ZonedDateTime dhakaTime = ZonedDateTime.now(ZoneId.of("Asia/Dhaka"));
+
+        ZonedDateTime newYorkTime =
+                ZonedDateTime.now(ZoneId.of("America/New_York"));
+
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("dd MMM yyyy hh:mm a z");
+
+        System.out.println("Dhaka Time: " + dhakaTime.format(formatter));
+        System.out.println("New York Time: " + newYorkTime.format(formatter));
+    }
+}
+
+example-2
+
+  import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class ParseDate {
+    public static void main(String[] args) {
+        
+        String dateString = "10-05-2026";
+
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+        LocalDate date = LocalDate.parse(dateString, formatter);
+
+        System.out.println("Parsed Date: " + date);
+    }
+}
