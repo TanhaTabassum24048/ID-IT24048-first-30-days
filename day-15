@@ -1,0 +1,25 @@
+Date-10 May 2026 
+Day-15
+Topic-Directory 
+Video num- 18
+Video link- https://youtu.be/svLv3q-_Fl0?si=9noMhOlwzJn_LCDH
+
+
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.io.IOException;
+
+public class DeleteDirNio {
+    public static void main(String[] args) {
+        Path path = Path.of("Projects/java");
+        try {
+            Files.delete(path);
+            System.out.println("Directory deleted successfully.");
+        } 
+        catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+} {
+    
+}
