@@ -1,0 +1,55 @@
+Date-10 May 2026 
+Day-14
+Topic-Read and write in file 
+Video num- 18
+Video link- https://youtu.be/lWFzm8qIR1c?si=O1mSzbbyW3buRrSQ
+
+  1.1
+  
+  import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadFromFile {
+    public static void main(String[] ads){
+        try {
+            FileReader reader = new FileReader("output.txt");
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                System.out.println(line);
+            }
+          
+            bufferedReader.close();
+        }
+        catch (IOException e){
+            System.out.println("An error occured:" + e.getMessage());
+        }
+    }
+}
+
+
+
+1.2
+
+
+  import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteToFile {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("output.txt");
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            bufferedWriter.write("Hello, World!");
+            bufferedWriter.newLine();
+            bufferedWriter.write("This is a Java file handling example.");
+            bufferedWriter.close();
+            System.out.println("Data written to the file successfully.");
+        } 
+        catch (IOException e) {
+            System.out.println("An error occurred: " + e.getMessage());
+        }
+    }
+}
