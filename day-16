@@ -1,0 +1,44 @@
+Date-10 May 2026 
+Day- 20
+Topic- Formatting time and dat 
+Video num-04
+Video link- https://youtu.be/ieveCaLfrlE?si=tMTPGFes2iARIeLC
+
+example-1
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class HospitalAppointment {
+    public static void main(String[] args) {
+        LocalDateTime appointmentTime = LocalDateTime.now();
+
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("dd MMM yyyy hh:mm a");
+
+        String formattedAppointment = appointmentTime.format(formatter);
+
+        System.out.println("Appointment Confirmed!");
+        System.out.println("Patient: Montu Mia");
+        System.out.println("Doctor: Dr. Kuddus");
+        System.out.println("Appointment Date & Time: " + formattedAppointment);
+    }
+}
+
+
+example-2
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Date {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+        String formattedDate = date.format(formatter);
+
+        System.out.println("Formatted Date: " + formattedDate);
+    }
+}
