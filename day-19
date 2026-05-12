@@ -1,0 +1,80 @@
+personal excersize
+
+
+  example1-
+
+  class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+
+public class MainAni {
+    public static void main(String[] args) {
+        
+        Animal a1 = new Dog();  
+        Animal a2 = new Cat();
+
+        a1.sound();  
+        a2.sound();
+    }
+}   
+
+
+
+example2-
+
+  class Payment {
+    void pay() {
+        System.out.println("Processing payment...");
+    }
+}
+
+class CreditCard extends Payment {
+    @Override
+    void pay() {
+        System.out.println("Payment done using Credit Card");
+    }
+}
+
+class Bkash extends Payment {
+    @Override
+    void pay() {
+        System.out.println("Payment done using bKash");
+    }
+}
+
+class Nagad extends Payment {
+    @Override
+    void pay() {
+        System.out.println("Payment done using Nagad");
+    }
+}
+
+public class MainPay {
+    public static void main(String[] args) {
+
+        Payment p1 = new CreditCard();
+        Payment p2 = new Bkash();
+        Payment p3 = new Nagad();
+
+        p1.pay();
+        p2.pay();
+        p3.pay();
+    }
+}
