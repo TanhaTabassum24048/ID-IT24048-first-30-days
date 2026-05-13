@@ -1,0 +1,57 @@
+self excersize -
+
+  class Shape1 {
+
+    protected String color;
+    Shape1(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public void printArea(double result) {
+        System.out.println("Area: " + result);
+    }
+}
+
+// Child class
+class Circleabs extends Shape1 {
+
+    private double radius;
+
+    Circleabs(String color, double radius) {
+
+        super(color);
+        this.radius = radius;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return this.radius;
+    }
+
+    public double calcArea() {
+        return Math.PI * this.radius * this.radius;
+    }
+}
+
+
+
+
+
+public class MainShape1{
+
+    public static void main(String[] args) {
+
+        Circleabs circle = new Circleabs("Red", 10.50);
+        System.out.println("Shape color: " + circle.getColor());
+
+        double result = circle.calcArea();
+        circle.printArea(result);
+    }
+}
